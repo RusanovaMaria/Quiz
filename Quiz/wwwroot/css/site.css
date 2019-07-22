@@ -1,0 +1,58 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
+for details on configuring this project to bundle and minify static web assets. */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: #E7EAED;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.quiz_form {
+    padding-top: 20px;
+    text-align:center;
+}
+
+.quiz_input {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align:center;
+}
+
+.name_label {
+    font-size:30px;
+}
+
+.name_input {
+    border: solid 2px black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.quiz_form_button {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+p{
+    text-align:center;
+}
+
+.gratitude {
+    font-size: 20px;
+    padding-top:40%;
+    padding-bottom:40%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
