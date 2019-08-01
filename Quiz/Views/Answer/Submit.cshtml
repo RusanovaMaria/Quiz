@@ -1,0 +1,21 @@
+﻿@model  AnswerReport
+
+@{
+    ViewData["Title"] = "Submit";
+}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+            </div>
+            <div class="col-lg-4">
+                <div class="gratitude">
+                    <p>@Model.Name, </p>
+                    <p>Благодарим Вас за участие</p>
+                    <p>в нашей викторине!</p>
+                    <p>Процент верных ответов: @Model.PersentOfCorrectAnswers</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
