@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Quiz.Models;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace Quiz.Controllers
 {
@@ -26,7 +27,6 @@ namespace Quiz.Controllers
             var name = requestForm["Name"];
             var report = new AnswerReport();
             report.Name = name;
-
             var userAnswers = requestForm["Answer"];
 
             int i = 0;
@@ -43,14 +43,22 @@ namespace Quiz.Controllers
                 }
             }
 
+            saveAnswerReport(report);
+
             return View(report);
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        private void saveAnswerReport(AnswerReport report)
         {
-            return View(new ErrorViewModel { RequestId = System.Diagnostics.Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            try
+            {
+                _context.AnswerReport.Add(report);
+                _context.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                ex.Entries.Single().Reload();
+            }
         }
-
     }
 }

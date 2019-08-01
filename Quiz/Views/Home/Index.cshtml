@@ -15,6 +15,8 @@
                 <label class="name_label">Введите Ваше имя</label>
                 <input type="text" class="form-control name_input" required name="Name">
 
+                @Html.ValidationMessage("Name_Error")
+
                 @foreach (Question question in Model)
                 {
                     <label>@Html.DisplayFor(modelItem => question.Text)</label>
