@@ -35,9 +35,11 @@ namespace Quiz.Controllers
             {
                 i++;
 
+                string answerWithoutSpace = answer.Trim();
+
                 var correctAnswer = await _context.Answer.FirstOrDefaultAsync(a => a.IdQuestion == i);
 
-                if ((correctAnswer != null) && (answer.Equals(correctAnswer.Text)))
+                if ((correctAnswer != null) && (answerWithoutSpace.Equals(correctAnswer.Text)))
                 {
                     report.PersentOfCorrectAnswers = report.PersentOfCorrectAnswers + (100 / (userAnswers.Count));
                 }
